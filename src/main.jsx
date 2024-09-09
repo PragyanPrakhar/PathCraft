@@ -5,6 +5,7 @@ import "./index.css";
 import Hero from "./pages/Hero.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainPage from "./pages/MainPage.jsx";
+import Login from "./pages/Login.jsx";
 const appRouter = createBrowserRouter([
     {
         path: "/",
@@ -20,7 +21,8 @@ const appRouter = createBrowserRouter([
           element:<MainPage/>,
         },
         {
-          
+          path:"/create/login",
+          element:<Login/>,
         }
       ]
     }
