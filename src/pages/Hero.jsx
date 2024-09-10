@@ -1,32 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
+import Header from "./Header"
+import Features from "@/components/ui/Features";
 import { Link } from "react-router-dom";
-
 const Hero = () => {
+    const [isHovered, setIsHovered] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
     return (
-        <div>
-            <section className="text-white h-screen w-screen bg-black">
-                <div className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
-                    <h1 className="text-4xl font-bold leading-none sm:text-5xl">
-                        Quisquam necessita vel
-                        <span className="text-violet-600">
-                            laborum doloribus
-                        </span>
-                        delectus
-                    </h1>
-                    <p className="px-8 mt-8 mb-12 text-lg">
-                        Cupiditate minima voluptate temporibus quia? Architecto
-                        beatae esse ab amet vero eaque explicabo!
-                    </p>
-                    <div className="flex flex-wrap justify-center">
-                        <Link to="/create">
-                            <button className="px-8 py-3 m-2 text-lg border font-semibold rounded dark:bg-violet-600 dark:text-gray-50">
-                                Get started
-                            </button>
-                        </Link>
+        <div className="overflow-hidden">
+            <Header/>
+            <div className="bg-gray-100">
+            <section className="bg-black h-screen w-screen text-white">
+                <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+                    <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+                        <h1 className="text-5xl font-bold leading-none sm:text-6xl">
+                            Craft Your
+                            <span className="text-red-500 ml-4">Career</span>
+                        </h1>
+                        <p className="mt-6 mb-8 text-lg sm:mb-12">
+                            A platform to boost your career
+                            <br className="hidden md:inline lg:hidden" />
+                            with your preferred skills
+                        </p>
+                        <div className="w-48 flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start border border-white p-4 rounded-md hover:bg-red-500 hover:text-white transition duration-300"
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                            style={{ backgroundColor: isHovered ? 'rgb(239 68 68)' : 'transparent' }}
+                        >
+                            <Link to="/create"><button className="text-lg font-bold cursor-pointer">Explore Now</button></Link>
+                        </div>
+                    </div>
+                    <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+                        <img
+                            src="https://mambaui.com/assets/svg/Business_SVG.svg"
+                            alt=""
+                            className="h-96 w-96 mr-32"
+                        />
                     </div>
                 </div>
             </section>
         </div>
+        <Features/>
+        </div>
+        
     );
 };
 

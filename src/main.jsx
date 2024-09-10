@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import Hero from "./pages/Hero.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import MainPage from "./pages/MainPage.jsx";
+import MainPage from "./pages/Create.jsx";
 import Login from "./pages/Login.jsx";
 const appRouter = createBrowserRouter([
     {

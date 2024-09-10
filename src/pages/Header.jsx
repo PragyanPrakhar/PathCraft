@@ -68,7 +68,7 @@ const Header = () => {
 
     return (
         <div>
-            <header className="p-4 bg-gray-900 text-gray-100 w-screen">
+            <header className="p-4 bg-black text-gray-100 w-screen">
                 <div className="container flex justify-between h-16 mx-auto">
                     <div className="flex">
                         <Logo />
