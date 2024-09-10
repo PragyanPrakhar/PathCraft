@@ -6,6 +6,7 @@ import Hero from "./pages/Hero.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainPage from "./pages/Create.jsx";
 import Login from "./pages/Login.jsx";
+import Path from "./pages/Path.jsx";
 const appRouter = createBrowserRouter([
     {
         path: "/",
@@ -23,6 +24,10 @@ const appRouter = createBrowserRouter([
         {
           path:"/create/login",
           element:<Login/>,
+        },
+        {
+          path:"/create/path/:id",
+          element:<Path/>
         }
       ]
     }

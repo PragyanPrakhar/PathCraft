@@ -6,14 +6,15 @@ import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 import { chatSession } from "@/utils/gemini";
 import { PROMPT } from "@/utils/constants";
-import useAddData from "@/Hooks/addData";
 import addData from "@/Hooks/addData";
+import { useNavigate } from "react-router";
 const Create = () => {
     const [formData, setFormData] = useState({
         tech: "",
         level: "",
         days: "",
     });
+    const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const handleSubmit = async () => {
         setLoading(true);
@@ -47,29 +48,23 @@ const Create = () => {
 
         const prompt = PROMPT.replace("#begineer", formData.level)
             .replace("#react", formData.tech)
+            .replace("#25", formData.days)
             .replace("#25", formData.days);
-        // const result = await chatSession.sendMessage(prompt);
-        // if (result) {
-        //     setLoading(false);
-        // }
-        // const saveData = await useAddData();
-
-        // console.log(result.response.text());
         try {
             const result = await chatSession.sendMessage(prompt);
-            const roadmap = JSON.parse(result.response.text()); // Assuming you get the roadmap here
-
-            // Save the data using the renamed function
+            const roadmapText =  result.response.text(); // Assuming you get the roadmap here
+            console.log(result.response.text().split("```json")[1].split("```")[0]);
             const selections = formData; // Adjust according to what selections you need to store
-            const id = await addData(roadmap, selections); // Call addData here
-
+            const id = await addData(roadmapText.split("```json")[1].split("```")[0], selections); // Call addData here
             if (id) {
                 toast.success("Roadmap saved successfully!");
+                navigate(`/create/path/${id}`);
             } else {
                 toast.error("Error saving roadmap.");
             }
         } catch (error) {
             toast.error("Error generating roadmap.");
+            console.log(error);
         } finally {
             setLoading(false);
         }

@@ -1,18 +1,9 @@
-/*
- * Install the Generative AI SDK
- *
- * $ npm install @google/generative-ai
- */
-
 import { GoogleGenerativeAI } from "@google/generative-ai";
-
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
-
 const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
 });
-
 const generationConfig = {
     temperature: 1,
     topP: 0.95,
@@ -20,11 +11,8 @@ const generationConfig = {
     maxOutputTokens: 8192,
     responseMimeType: "text/plain",
 };
-
 export const chatSession = model.startChat({
     generationConfig,
-    // safetySettings: Adjust safety settings
-    // See https://ai.google.dev/gemini-api/docs/safety-settings
     history: [
         {
             role: "user",

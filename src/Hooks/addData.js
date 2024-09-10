@@ -5,8 +5,8 @@ const addData = async (roadmap, selections) => {
     try {
         const id = Date.now().toString();
         const user = JSON.parse(localStorage.getItem("user"));
-        const docRef = await addDoc(collection(db, "abcd1234"), {
-            detail: roadmap,
+        await addDoc(collection(db, "abcd1234"), {
+            detail: JSON.parse(roadmap),
             userSelection: selections,
             email: user.email,
             id: id,
