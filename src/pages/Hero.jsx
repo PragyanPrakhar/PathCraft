@@ -4,6 +4,7 @@ import Features from "@/components/ui/Features";
 import { Link, useNavigate } from "react-router-dom";
 import Contactt from "@/custom/Contactt";
 import useOnlineStatus from "@/Hooks/useOnlineStatus";
+import Footer from "@/custom/Footer";
 const Hero = () => {
     const [isHovered, setIsHovered] = useState(false);
     const navigate=useNavigate();
@@ -55,6 +56,7 @@ const Hero = () => {
         </div>
         <Features/>
         <Contactt/>
+        <Footer/>
         </div>
         
     );
