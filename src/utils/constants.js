@@ -9,11 +9,15 @@ export const navItems = [
     },
     {
         name: "About",
-        path: "/about",
+        path: "/create/about",
     },
     {
         name: "Contact",
-        path: "/contact",
+        path: "/create/contact",
+    },
+    {
+        name:"Roadmaps",
+        path:"/create/roadmaps"
     },
 ];
 
@@ -54,5 +58,6 @@ export const {
     VITE_FIREBASE_STORAGE_BUCKET,
     VITE_FIREBASE_MESSAGING_SENDER_ID,
     VITE_FIREBASE_APP_ID,
-    VITE_FIREBASE_MEASUREMENT_ID
+    VITE_FIREBASE_MEASUREMENT_ID,
+    VITE_GOOGLE_API_KEY
 }=import.meta.env;

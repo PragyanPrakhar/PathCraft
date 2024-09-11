@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "./Header"
 import Features from "@/components/ui/Features";
 import { Link } from "react-router-dom";
+// import { Toaster } from "@/components/ui/sonner";
 const Hero = () => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -48,6 +49,7 @@ const Hero = () => {
             </section>
         </div>
         <Features/>
+        {/* <Toaster/> */}
         </div>
         
     );

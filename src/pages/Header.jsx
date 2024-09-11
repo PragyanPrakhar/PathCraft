@@ -28,6 +28,7 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const info = JSON.parse(localStorage.getItem("user"));
@@ -70,17 +71,24 @@ const Header = () => {
         <div>
             <header className="p-4 bg-black text-gray-100 w-screen">
                 <div className="container flex justify-between h-16 mx-auto">
-                    <div className="flex">
+                    <div className="flex items-center">
                         <Logo />
                         <ul className="items-stretch hidden space-x-3 pl-24 gap-8 lg:flex">
-                            {navItems.map((item, index) => (
-                                <li
-                                    key={index}
-                                    className="flex items-center px-4 -mb-1 cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-110 hover:text-blue-500"
-                                >
-                                    {item.name}
-                                </li>
-                            ))}
+                            {navItems.map((item, index) =>
+                                item.name !== "Roadmaps" ? (
+                                    <Link to={item.path} key={index}>
+                                        <li className="flex items-center px-4 -mb-1 cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-110 hover:text-blue-500">
+                                            {item.name}
+                                        </li>
+                                    </Link>
+                                ) : (
+                                    info && (
+                                        <li className="flex items-center px-4 -mb-1 cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-110 hover:text-blue-500">
+                                            {item.name}
+                                        </li>
+                                    )
+                                )
+                            )}
                         </ul>
                     </div>
                     <div className="items-center flex-shrink-0 hidden lg:flex">
@@ -158,12 +166,14 @@ const Header = () => {
                                     {navItems.map((item, index) => (
                                         <SheetTitle key={index}>
                                             <div className="text-white">
-                                                <li
+                                                <Link
+                                                    to={item.path}
                                                     key={index}
-                                                    className="flex mt-4 items-center px-4 -mb-1 cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-110 hover:text-blue-500"
                                                 >
-                                                    {item.name}
-                                                </li>
+                                                    <li className="flex mt-4 items-center px-4 -mb-1 cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-110 hover:text-blue-500">
+                                                        {item.name}
+                                                    </li>
+                                                </Link>
                                             </div>
                                         </SheetTitle>
                                     ))}

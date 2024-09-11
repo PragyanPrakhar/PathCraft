@@ -22,6 +22,7 @@ const Create = () => {
         if (!data?.isAuthenticated) {
             toast.error("Please login to continue.");
             setLoading(false);
+            return;
         }
         if (
             formData.tech == "" ||

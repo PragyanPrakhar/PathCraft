@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainPage from "./pages/Create.jsx";
 import Login from "./pages/Login.jsx";
 import Path from "./pages/Path.jsx";
+import Roadmaps from "./pages/Roadmaps.jsx";
 const appRouter = createBrowserRouter([
     {
         path: "/",
@@ -28,6 +29,10 @@ const appRouter = createBrowserRouter([
         {
           path:"/create/path/:id",
           element:<Path/>
+        },
+        {
+          path:"/create/roadmaps",
+          element:<Roadmaps/>
         }
       ]
     }
