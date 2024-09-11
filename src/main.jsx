@@ -13,37 +13,35 @@ import OfflinePage from "./pages/OfflinePage.jsx";
 const appRouter = createBrowserRouter([
     {
         path: "/",
-        errorElement:<ErrorPage/>,
+        errorElement: <ErrorPage />,
         element: <Hero />,
     },
     {
-      path:"/create",
-      element:<App/>,
-      children:[
-        
-        {
-          path:"/create",
-          element:<MainPage/>,
-        },
-        {
-          path:"/create/login",
-          element:<Login/>,
-        },
-        {
-          path:"/create/path/:id",
-          element:<Path/>
-        },
-        {
-          path:"/create/roadmaps",
-          element:<Roadmaps/>
-        },
-        {
-          path:"/create/offline",
-          element:<OfflinePage/>
-        }
-      ]
-    }
-    
+        path: "/create",
+        element: <App />,
+        children: [
+            {
+                path: "/create",
+                element: <MainPage />,
+            },
+            {
+                path: "/create/login",
+                element: <Login />,
+            },
+            {
+                path: "/create/path/:id",
+                element: <Path />,
+            },
+            {
+                path: "/create/roadmaps",
+                element: <Roadmaps />,
+            },
+            {
+                path: "/create/offline",
+                element: <OfflinePage />,
+            },
+        ],
+    },
 ]);
 createRoot(document.getElementById("root")).render(
     <StrictMode>

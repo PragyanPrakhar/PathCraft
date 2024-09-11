@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "pathai-9df08"
+
+    "default":"path-crafter.vercel.app"
+
   }
 }
+    
