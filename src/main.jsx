@@ -8,7 +8,7 @@ import MainPage from "./pages/Create.jsx";
 import Login from "./pages/Login.jsx";
 import Path from "./pages/Path.jsx";
 import Roadmaps from "./pages/Roadmaps.jsx";
-import ErrorPage from "./pages/Errorpage.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
 import OfflinePage from "./pages/OfflinePage.jsx";
 const appRouter = createBrowserRouter([
     {
