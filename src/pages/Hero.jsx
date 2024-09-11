@@ -2,18 +2,15 @@ import React, { useState } from "react";
 import Header from "./Header"
 import Features from "@/components/ui/Features";
 import { Link } from "react-router-dom";
-// import { Toaster } from "@/components/ui/sonner";
+import Contactt from "@/custom/Contactt";
 const Hero = () => {
     const [isHovered, setIsHovered] = useState(false);
-
     const handleMouseEnter = () => {
         setIsHovered(true);
     };
-
     const handleMouseLeave = () => {
         setIsHovered(false);
     };
-
     return (
         <div className="overflow-hidden">
             <Header/>
@@ -49,7 +46,7 @@ const Hero = () => {
             </section>
         </div>
         <Features/>
-        {/* <Toaster/> */}
+        <Contactt/>
         </div>
         
     );

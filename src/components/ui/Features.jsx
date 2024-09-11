@@ -1,138 +1,32 @@
 import React from "react";
-
+import { featuresData } from "../../utils/constants";
 const Features = () => {
     return (
         <div>
-            <section className=" bg-black text-white">
-                <div className="container mx-auto p-4 space-y-2 text-center">
+            <section className=" bg-black text-white  ">
+                <div className="container mx-auto p-4  space-y-2 text-center">
                     <h2 className="text-5xl font-bold">
-                        Built to empower every team
+                        Features We Providing You
                     </h2>
-                    <p className="dark:text-gray-600">
-                        Libero minima optio qui
-                    </p>
+                    <p className="">craft your learning path</p>
                 </div>
                 <div className="container mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    <div className="flex flex-col items-center p-4">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="w-8 h-8 dark:text-violet-600"
+                    {featuresData.map((data, index) => (
+                        <div
+                            key={index}
+                            className="flex flex-col items-center p-4"
                         >
-                            <path
-                                fillRule="evenodd"
-                                d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-                                clipRule="evenodd"
-                            ></path>
-                        </svg>
-                        <h3 className="my-3 text-3xl font-semibold">Product</h3>
-                        <div className="space-y-1 leading-tight">
-                            <p>Similique quas ea veniam</p>
-                            <p>Tempore quasi porro</p>
-                            <p>Blanditiis aut mollitia ex</p>
+                            <p className="text-3xl">{data.logo}</p>
+                            <h3 className=" text-3xl font-semibold hover:text-blue-500 transition-transform ease-in-out hover:scale-105">
+                                {data.name}
+                            </h3>
+                            <div className="space-y-1 leading-tight flex flex-col justify-center items-center">
+                                <p>{data.description[0]}</p>
+                                <p>{data.description[1]}</p>
+                                <p>{data.description[2]}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="flex flex-col items-center p-4">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="w-8 h-8 dark:text-violet-600"
-                        >
-                            <path
-                                fillRule="evenodd"
-                                d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-                                clipRule="evenodd"
-                            ></path>
-                        </svg>
-                        <h3 className="my-3 text-3xl font-semibold">Product</h3>
-                        <div className="space-y-1 leading-tight">
-                            <p>Similique quas ea veniam</p>
-                            <p>Tempore quasi porro</p>
-                            <p>Blanditiis aut mollitia ex</p>
-                        </div>
-                    </div>
-                    <div className="flex flex-col items-center p-4">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="w-8 h-8 dark:text-violet-600"
-                        >
-                            <path
-                                fillRule="evenodd"
-                                d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-                                clipRule="evenodd"
-                            ></path>
-                        </svg>
-                        <h3 className="my-3 text-3xl font-semibold">Product</h3>
-                        <div className="space-y-1 leading-tight">
-                            <p>Similique quas ea veniam</p>
-                            <p>Tempore quasi porro</p>
-                            <p>Blanditiis aut mollitia ex</p>
-                        </div>
-                    </div>
-                    <div className="flex flex-col items-center p-4">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="w-8 h-8 dark:text-violet-600"
-                        >
-                            <path
-                                fillRule="evenodd"
-                                d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-                                clipRule="evenodd"
-                            ></path>
-                        </svg>
-                        <h3 className="my-3 text-3xl font-semibold">Product</h3>
-                        <div className="space-y-1 leading-tight">
-                            <p>Similique quas ea veniam</p>
-                            <p>Tempore quasi porro</p>
-                            <p>Blanditiis aut mollitia ex</p>
-                        </div>
-                    </div>
-                    <div className="flex flex-col items-center p-4">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="w-8 h-8 dark:text-violet-600"
-                        >
-                            <path
-                                fillRule="evenodd"
-                                d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-                                clipRule="evenodd"
-                            ></path>
-                        </svg>
-                        <h3 className="my-3 text-3xl font-semibold">Product</h3>
-                        <div className="space-y-1 leading-tight">
-                            <p>Similique quas ea veniam</p>
-                            <p>Tempore quasi porro</p>
-                            <p>Blanditiis aut mollitia ex</p>
-                        </div>
-                    </div>
-                    <div className="flex flex-col items-center p-4">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="w-8 h-8 dark:text-violet-600"
-                        >
-                            <path
-                                fillRule="evenodd"
-                                d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-                                clipRule="evenodd"
-                            ></path>
-                        </svg>
-                        <h3 className="my-3 text-3xl font-semibold">Product</h3>
-                        <div className="space-y-1 leading-tight">
-                            <p>Similique quas ea veniam</p>
-                            <p>Tempore quasi porro</p>
-                            <p>Blanditiis aut mollitia ex</p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </section>
         </div>
