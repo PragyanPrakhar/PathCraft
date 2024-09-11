@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import Header from "./Header"
 import Features from "@/components/ui/Features";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Contactt from "@/custom/Contactt";
+import useOnlineStatus from "@/Hooks/useOnlineStatus";
 const Hero = () => {
     const [isHovered, setIsHovered] = useState(false);
+    const navigate=useNavigate();
+    const onlineStatus = useOnlineStatus();
     const handleMouseEnter = () => {
         setIsHovered(true);
     };
     const handleMouseLeave = () => {
         setIsHovered(false);
     };
+    if(!onlineStatus)
+    {
+        navigate("/create/offline");
+        return;
+    }
     return (
         <div className="overflow-hidden">
             <Header/>

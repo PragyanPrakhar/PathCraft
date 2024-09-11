@@ -8,14 +8,22 @@ import { chatSession } from "@/utils/gemini";
 import { PROMPT } from "@/utils/constants";
 import addData from "@/Hooks/addData";
 import { useNavigate } from "react-router";
+import useOnlineStatus from "@/Hooks/useOnlineStatus";
 const Create = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         tech: "",
         level: "",
         days: "",
     });
-    const navigate = useNavigate();
+
     const [loading, setLoading] = useState(false);
+    const onlineStatus = useOnlineStatus();
+    if (!onlineStatus) {
+        navigate("/create/offline");
+        return;
+    }
+
     const handleSubmit = async () => {
         setLoading(true);
         const data = JSON.parse(localStorage.getItem("user"));
@@ -53,10 +61,15 @@ const Create = () => {
             .replace("#25", formData.days);
         try {
             const result = await chatSession.sendMessage(prompt);
-            const roadmapText =  result.response.text(); // Assuming you get the roadmap here
-            console.log(result.response.text().split("```json")[1].split("```")[0]);
+            const roadmapText = result.response.text(); // Assuming you get the roadmap here
+            console.log(
+                result.response.text().split("```json")[1].split("```")[0]
+            );
             const selections = formData; // Adjust according to what selections you need to store
-            const id = await addData(roadmapText.split("```json")[1].split("```")[0], selections); // Call addData here
+            const id = await addData(
+                roadmapText.split("```json")[1].split("```")[0],
+                selections
+            ); // Call addData here
             if (id) {
                 toast.success("Roadmap saved successfully!");
                 navigate(`/create/path/${id}`);

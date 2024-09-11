@@ -1,8 +1,9 @@
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useRef, useState } from "react";
 import { db } from "@/service/fireStore";
 import { VITE_GOOGLE_API_KEY } from "@/utils/constants";
+import useOnlineStatus from "@/Hooks/useOnlineStatus";
 import {
     Accordion,
     AccordionContent,
@@ -23,11 +24,16 @@ import ReactPlayer from "react-player";
 
 const Path = () => {
     const { id } = useParams();
+    const navigate=useNavigate();
+    const onlineStatus=useOnlineStatus();
     const [fetchedData, setFetchedData] = useState([]);
     const [selectedInfo, setSelectedInfo] = useState([]);
     const roadMapRef = useRef(null);
-    // const [query, setQuery] = useState("");
-    // const [data, setData] = useState("");
+    if(!onlineStatus)
+    {
+        navigate("/create/offline");
+    }
+
     useEffect(() => {
         getData();
         // query && getVideoPlaylist();
@@ -41,6 +47,7 @@ const Path = () => {
     }; */
     const getData = async () => {
         const querySnapshot = await getDocs(collection(db, "abcd1234"));
+        
         querySnapshot.forEach((doc) => {
             if (doc.data().id === id) {
                 setFetchedData(doc.data().detail);

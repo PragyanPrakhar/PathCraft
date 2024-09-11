@@ -83,9 +83,11 @@ const Header = () => {
                                     </Link>
                                 ) : (
                                     info && (
-                                        <li className="flex items-center px-4 -mb-1 cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-110 hover:text-blue-500">
-                                            {item.name}
-                                        </li>
+                                        <Link to="/create/roadmaps">
+                                            <li className="flex items-center px-4 -mb-1 cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-110 hover:text-blue-500">
+                                                {item.name}
+                                            </li>
+                                        </Link>
                                     )
                                 )
                             )}
