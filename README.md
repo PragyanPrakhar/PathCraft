@@ -36,15 +36,21 @@ Path-crafter is a personalized learning roadmap generator that helps users effic
 
 ### Landing Page
 
-![Landing Page](./src/assets/path-crafter.vercel.app_(1).png)
+## Landing Page
+<p align="center">
+   <img src="path-crafter.vercel.app_(1).png" alt="MovieMind UI Preview" width="70%">
+</p>
 
-### Create Roadmap
 
-![Create Roadmap](./src/assets/path-crafter.vercel.app_(2).png)
+## Create Roadmap
+<p align="center">
+   <img src="path-crafter.vercel.app_(2).png" alt="MovieMind UI Preview" width="70%">
+</p>
 
-### View and Manage Roadmaps
-
-![View and Manage Roadmaps](./src/assets/path-crafter.vercel.app_(4).png)
+## View and Manage Roadmaps
+<p align="center">
+   <img src="path-crafter.vercel.app_(4).png" alt="MovieMind UI Preview" width="70%">
+</p>
 
 ## Installation
 
