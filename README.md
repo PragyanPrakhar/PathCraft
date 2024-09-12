@@ -36,15 +36,15 @@ Path-crafter is a personalized learning roadmap generator that helps users effic
 
 ### Landing Page
 
-![Landing Page](./src/assets/path-crafter.vercel.app_ (1).png)
+![Landing Page](./src/assets/path-crafter.vercel.app_(1).png)
 
 ### Create Roadmap
 
-![Create Roadmap](./src//assets/path-crafter.vercel.app_ (2).png)
+![Create Roadmap](./src/assets/path-crafter.vercel.app_(2).png)
 
 ### View and Manage Roadmaps
 
-![View and Manage Roadmaps](./src/assets/path-crafter.vercel.app_ (4).png)
+![View and Manage Roadmaps](./src/assets/path-crafter.vercel.app_(4).png)
 
 ## Installation
 
