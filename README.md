@@ -47,12 +47,12 @@
 
 ## Create Roadmap
 <p align="center">
-   <img src="/src/assets/path-crafter.vercel.app_(2).png" alt="MovieMind UI Preview" width="70%">
+   <img src="/src/assets/path-crafter.vercel.app_ (2).png" alt="MovieMind UI Preview" width="70%">
 </p>
 
 ## View and Manage Roadmaps
 <p align="center">
-   <img src="/src/assets/path-crafter.vercel.app_(4).png" alt="MovieMind UI Preview" width="70%">
+   <img src="/src/assets/path-crafter.vercel.app_ (4).png" alt="MovieMind UI Preview" width="70%">
 </p>
 
 ## Installation
