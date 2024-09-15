@@ -18,7 +18,7 @@ const Roadmaps = () => {
     const getData = async () => {
         if (!user) {
             navigate("/");
-            toast.error("Please Login to Continue")
+            toast.error("Please Login to Continue");
             return;
         }
         const q = query(
@@ -31,7 +31,6 @@ const Roadmaps = () => {
             setData((prev) => [...prev, doc.data()]);
         });
         console.log(data);
-        // console.log(data[0].id);
     };
     return (
         <div className="min-h-screen bg-black ">
@@ -50,7 +49,7 @@ const Roadmaps = () => {
                         );
                     })}
             </div>
-            <Toaster/>
+            <Toaster />
         </div>
     );
 };

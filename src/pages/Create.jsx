@@ -62,9 +62,9 @@ const Create = () => {
         try {
             const result = await chatSession.sendMessage(prompt);
             const roadmapText = result.response.text(); // Assuming you get the roadmap here
-            console.log(
+            /* console.log(
                 result.response.text().split("```json")[1].split("```")[0]
-            );
+            ); */
             const selections = formData; // Adjust according to what selections you need to store
             const id = await addData(
                 roadmapText.split("```json")[1].split("```")[0],
