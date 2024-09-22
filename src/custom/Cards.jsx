@@ -78,13 +78,15 @@ import { db } from "@/service/fireStore";
 import { toast } from "sonner";
 import { Toaster } from "../components/ui/sonner";
 
-const Cards = ({ days, level, tech, img, id }) => {
+const Cards = ({ days, level, tech, img, id, removeCard }) => {
     const navigate = useNavigate();
     const deleteHandler = async () => {
         try {
             console.log(id);
             await deleteDoc(doc(db, "abcd1234", id));
-            window.location.reload();
+            removeCard(id);
+            // window.location.reload();
+            toast.success("Roadmap Deleted Successfully");
         } catch (error) {
             toast.error("Something went wrong");
         }

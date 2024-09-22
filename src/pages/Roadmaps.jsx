@@ -31,6 +31,11 @@ const Roadmaps = () => {
             setData((prev) => [...prev, doc.data()]);
         });
         console.log(data);
+
+        // Function to remove the card from the state after deletion
+    };
+    const removeCard = (id) => {
+        setData((prevData) => prevData.filter((item) => item.id !== id));
     };
     return (
         <div className="min-h-screen bg-black ">
@@ -45,6 +50,7 @@ const Roadmaps = () => {
                                 tech={item.userSelection.tech}
                                 img={user.profilePic}
                                 id={item.id}
+                                removeCard={removeCard}
                             />
                         );
                     })}
